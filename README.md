@@ -17,7 +17,7 @@ An interactive visualization tool for understanding how different sorting algori
 - Merge Sort
 
 ## Live Demo
-https://67a07d14afa20e72aa25ebeb--lustrous-kelpie-a3e7de.netlify.app/
+https://sortingalgorithmvisualizerwebsite.netlify.app/
 
 ## Technologies Used
 1-HTML
