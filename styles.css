@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #1a1a2e;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    padding: 0 1rem;
+}
+
+.top-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.controls {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+label {
+    font-weight: 500;
+    color: #4facfe;
+    font-size: 0.9rem;
+}
+
+select,
+button {
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: none;
+    background: #2d2d44;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+}
+
+button {
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(79, 172, 254, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#pause {
+    background: linear-gradient(45deg, #f6d365 0%, #fda085 100%);
+}
+
+#stop {
+    background: linear-gradient(45deg, #fe4a49 0%, #f7775a 100%);
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    height: 100%;
+}
+
+.info-card h2 {
+    color: #4facfe;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.algorithm-details h3 {
+    color: #00f2fe;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.algorithm-details p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.complexity-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.complexity-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.complexity-info h4 {
+    color: #4facfe;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.complexity-info p {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.complexity-info span {
+    color: #00f2fe;
+    font-weight: 500;
+}
+
+.visualization {
+    background: rgba(255, 255, 255, 0.05);
+    height: 400px;
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    margin-top: 2rem;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bar {
+    flex: 1;
+    background: linear-gradient(to top, #4facfe 0%, #00f2fe 100%);
+    transition: height 0.3s ease, background 0.3s ease;
+    border-radius: 3px 3px 0 0;
+}
+
+.bar.comparing {
+    background: linear-gradient(to top, #ff416c 0%, #ff4b2b 100%);
+}
+
+.bar.sorted {
+    background: linear-gradient(to top, #00b09b 0%, #96c93d 100%);
+}
+
+input[type="range"] {
+    width: 100%;
+    background: #2d2d44;
+    height: 8px;
+    border-radius: 4px;
+    outline: none;
+    -webkit-appearance: none;
+    margin: 0.5rem 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4facfe;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #4facfe;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(79, 172, 254, 0.7);
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(79, 172, 254, 0.7);
+}
+
+@media (max-width: 1024px) {
+    .top-section {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .visualization {
+        height: 300px;
+    }
+
+    .complexity-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 0.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .buttons button {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .visualization {
+        height: 250px;
+        gap: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .controls, .info-card {
+        padding: 1rem;
+    }
+
+    .visualization {
+        height: 200px;
+    }
+}
+
+.bar.comparing {
+    background: linear-gradient(to top, #ff416c 0%, #ff4b2b 100%);
+}
+
+.bar.sorted {
+    background: linear-gradient(to top, #00b09b 0%, #96c93d 100%);
+}
+
+.bar.processing {
+    background: linear-gradient(to top, #f6d365 0%, #fda085 100%);
+}

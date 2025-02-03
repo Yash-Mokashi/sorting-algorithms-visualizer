@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Sorting Algorithms Visualizer</h1>
+    </header>
+
+    <div class="container">
+        <div class="top-section">
+            <div class="controls">
+                <div class="control-group">
+                    <label for="array-size">Array Size</label>
+                    <input type="range" id="array-size" min="10" max="150" value="50">
+                </div>
+                <div class="control-group">
+                    <label for="speed">Speed</label>
+                    <input type="range" id="speed" min="1" max="100" value="50">
+                </div>
+                <div class="control-group">
+                    <label for="algorithm">Algorithm</label>
+                    <select id="algorithm">
+                        <option value="bubble">Bubble Sort</option>
+                        <option value="insertion">Insertion Sort</option>
+                        <option value="selection">Selection Sort</option>
+                        <option value="quick">Quick Sort</option>
+                        <option value="merge">Merge Sort</option>
+                    </select>
+                </div>
+                <div class="control-group buttons">
+                    <button id="generate">Generate New Array</button>
+                    <button id="sort">Start Sorting</button>
+                    <button id="pause">Pause</button>
+                    <button id="stop" disabled>Stop</button>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h2>Algorithm Information</h2>
+                <div class="algorithm-details">
+                    <h3 id="algo-name"></h3>
+                    <p id="algo-description"></p>
+                    <div class="complexity-info">
+                        <div class="complexity-section">
+                            <h4>Time Complexity</h4>
+                            <p>Best Case: <span id="best-case"></span></p>
+                            <p>Average Case: <span id="avg-case"></span></p>
+                            <p>Worst Case: <span id="worst-case"></span></p>
+                        </div>
+                        <div class="complexity-section">
+                            <h4>Additional Info</h4>
+                            <p>Space Complexity: <span id="space-complexity"></span></p>
+                            <p>Stable: <span id="stability"></span></p>
+                            <p>Adaptive: <span id="adaptivity"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="visualization"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
